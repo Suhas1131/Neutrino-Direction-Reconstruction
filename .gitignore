@@ -1,0 +1,21 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+# Data files
+*.npy
+*.npz
+*.csv
+*.parquet
+*.fits
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# Large folders
+data/
+models/
+checkpoints/
+outputs/
+logs/
