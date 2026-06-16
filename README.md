@@ -2,7 +2,7 @@
 
 This repository is a cleaned portfolio version of a machine-learning workflow for neutrino arrival-direction reconstruction using simulated ANITA-III event data.
 
-The code was developed for a research workflow that used timing-map inputs and signal-to-noise ratio features to predict incoming particle direction. The broader project is ongoing, and my access to the current project data, trained CNN model, and latest performance outputs ended when my role on the project ended. This repository does **not** include raw data, model checkpoints, or current results.
+The code was developed for a research workflow that used timing-map inputs and signal-to-noise ratio features to predict incoming particle direction. The broader project is ongoing, access to the project data, trained CNN model, model checkpoints, and latest performance outputs is **not** included in this public repository.
 
 This work was developed and trained using GPU resources on the Ohio Supercomputer Center (OSC). This repo is not intended to be a fully reproducible public research package.
 
@@ -19,8 +19,8 @@ Each simulated event includes:
 - A two-channel timing map
 - Signal-to-noise ratio features for vertical and horizontal polarization
 - True angular labels:
-  - `phi`: azimuthal heading
-  - `theta`: elevation angle
+  - `phi` ($\phi$): azimuthal heading
+  - `theta` ($\phi$): elevation angle
 
 The main model is a multi-input convolutional neural network that combines image-like timing-map information with SNR features. A Random Forest regressor is included as a simpler baseline model.
 
@@ -32,7 +32,7 @@ ANITA detects impulsive radio signals using an antenna array carried by a high-a
 
 Traditional direction reconstruction relied on signal timing, detector geometry, and correlation-based methods. A machine-learning model can learn the mapping from simulated detector responses instead of manually reconstructing direction from timing correlations.
 
-This workflow uses supervised learning because the simulated events contain both detector-level inputs and true direction labels.
+This workflow uses supervised learning (simulated events contain both detector-level inputs and true direction labels).
 
 ---
 
@@ -40,7 +40,7 @@ This workflow uses supervised learning because the simulated events contain both
 
 Each event is represented by timing-map and SNR information.
 
-The timing map is stored with shape `(2, 48, 150)`. The two channels represent detector timing-map information, while the remaining dimensions represent the map structure used by the CNN.
+The timing map is stored with shape `(2, 48, 150)`. The two channels represent detector vertically and horizontally polarized signal timing-maps, while the remaining dimensions represent the map structure used by the CNN.
 
 Each event also includes two scalar SNR features: `snr_vpol` and `snr_hpol`.
 
@@ -53,7 +53,7 @@ The CNN uses both input types:
 
 ## Visual Examples
 
-The figures below are representative visualizations from an earlier prototype used to develop the workflow. They are included to show the structure of the data and the prediction task.
+The figures below are representative visualizations that were used to develop this workflow. They are included to show the structure of the data and the prediction task.
 
 ### Clean Timing Map Example
 
@@ -189,7 +189,7 @@ The evaluation scripts load trained models, predict directions on test data, con
 
 The angular error is calculated from the wrapped `phi` error and the `theta` error. In plain terms, the workflow compares the predicted and true heading, wraps the heading difference correctly across the `0^\circ / 360^\circ` boundary, compares the predicted and true elevation, then combines the two errors into an approximate total angular error in degrees.
 
-Current evaluation outputs are not included because the active project data, trained CNN model, and latest results are unavailable to me.
+Current evaluation outputs are not included.
 
 ---
 
@@ -198,11 +198,11 @@ Current evaluation outputs are not included because the active project data, tra
 - `README.md`: project overview and workflow summary
 - `.gitignore`: excludes data, models, outputs, logs, and cache files
 - `sbatch_train_cnn.sh`: OSC/SLURM GPU training script
-- `Figures/clean timing map.png`: representative clean timing-map example
-- `Figures/noise timing map.png`: representative noisy timing-map example
+- `Figures/clean timing map.png`: clean timing-map example
+- `Figures/noise timing map.png`: noisy timing-map example
 - `Figures/angle_distribution.png`: representative direction-distribution figure
 - `src/preprocess_data.py`: preprocessing for Random Forest and CNN workflows
-- `src/train_random_forest.py`: Random Forest baseline training
+- `src/train_random_forest.py`: Random Forest training
 - `src/train_cnn.py`: multi-input CNN training
 - `src/evaluate_random_forest.py`: Random Forest evaluation
 - `src/evaluate_cnn.py`: CNN evaluation
@@ -255,7 +255,7 @@ The OSC account name and Python environment path are intentionally replaced with
 
 ## Expected Workflow
 
-Assuming access to the private data and correct OSC/Python environment, the workflow is:
+Order of the workflow is:
 
 1. Create the output folders: `data`, `models`, `outputs`, `figures`, and `logs`
 2. Run `src/preprocess_data.py`
