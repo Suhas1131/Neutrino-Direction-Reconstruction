@@ -48,7 +48,7 @@ TRAIN_SNR_PATH = f"{DATA_DIR}/train_snr_cnn.npy"
 TRAIN_LABELS_PATH = f"{DATA_DIR}/train_labels_cnn.npy"
 
 # Path to trained model
-MODEL_OUTPUT_PATH = os.path.join(MODEL_DIR, "anita_CNN.keras")
+MODEL_OUTPUT_PATH = f"{MODEL_DIR}/anita_CNN.keras"
 
 BATCH_SIZE = 512
 EPOCHS = 100
