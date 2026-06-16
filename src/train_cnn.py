@@ -6,9 +6,9 @@ The model uses timing-map inputs and SNR features to predict direction labels.
 The original workflow was designed for GPU training on HPC systems.
 
 Input files:
-    data/train_timingMap_cnn.npy   shape: (N, 2, 48, 150)
-    data/train_snr_cnn.npy         shape: (N, 2)
-    data/train_labels_cnn.npy      shape: (N, 3)
+    data/train_timingMap_cnn.npy -> [shape: (N, 2, 48, 150)]
+    data/train_snr_cnn.npy -> [shape: (N, 2)]
+    data/train_labels_cnn.npy -> [shape: (N, 3)]
 
 Labels:
     labels[:, 0] = cos(phi)
@@ -43,9 +43,9 @@ MODEL_DIR = "models"
 LOG_DIR = "logs"
 
 # Paths to input files/labels
-TRAIN_TIMING_MAP_PATH = os.path.join(DATA_DIR, "train_timingMap_cnn.npy")
-TRAIN_SNR_PATH = os.path.join(DATA_DIR, "train_snr_cnn.npy")
-TRAIN_LABELS_PATH = os.path.join(DATA_DIR, "train_labels_cnn.npy")
+TRAIN_TIMING_MAP_PATH = f"{DATA_DIR}/train_timingMap_cnn.npy"
+TRAIN_SNR_PATH = f"{DATA_DIR}/train_snr_cnn.npy"
+TRAIN_LABELS_PATH = f"{DATA_DIR}/train_labels_cnn.npy"
 
 # Path to trained model
 MODEL_OUTPUT_PATH = os.path.join(MODEL_DIR, "anita_CNN.keras")
