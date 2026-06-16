@@ -57,13 +57,13 @@ The figures below are representative visualizations from an earlier prototype us
 
 ### Clean Timing Map Example
 
-![Clean timing map](<Figures/clean timing map.png>)
+![Clean timing map](Figures/clean_timing_map.png)
 
 This example shows a cleaner timing-map pattern where signal structure is visible across the detector channels. These structured patterns are the type of information the CNN is designed to learn from.
 
 ### Noise Timing Map Example
 
-![Noise timing map](<Figures/noise timing map.png>)
+![Noise timing map](Figures/noise_timing_map.png)
 
 This example shows a noisier timing map where the signal is less visually distinct. These cases are more difficult because noise can obscure the timing structure needed for direction reconstruction.
 
