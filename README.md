@@ -2,7 +2,7 @@
 
 This repository is a cleaned portfolio version of a machine-learning workflow for neutrino arrival-direction reconstruction using simulated ANITA-III event data.
 
-The code was developed for a research workflow that used timing-map inputs and signal-to-noise ratio features to predict incoming particle direction. The broader project is ongoing, access to the project data, trained CNN model, model checkpoints, and latest performance outputs is **not** included in this public repository.
+The code was developed for a research workflow that used timing-map inputs and signal-to-noise ratio features to predict incoming particle direction. The broader project is ongoing, so the project data, trained CNN model, model checkpoints, and latest performance outputs are **not** included in this public repository.
 
 This work was developed and trained using GPU resources on the Ohio Supercomputer Center (OSC). This repo is not intended to be a fully reproducible public research package.
 
@@ -20,7 +20,7 @@ Each simulated event includes:
 - Signal-to-noise ratio features for vertical and horizontal polarization
 - True angular labels:
   - `phi` ($\phi$): azimuthal heading
-  - `theta` ($\phi$): elevation angle
+  - `theta` ($\theta$): elevation angle
 
 The main model is a multi-input convolutional neural network that combines image-like timing-map information with SNR features. A Random Forest regressor is included as a simpler baseline model.
 
@@ -30,7 +30,7 @@ The main model is a multi-input convolutional neural network that combines image
 
 ANITA detects impulsive radio signals using an antenna array carried by a high-altitude balloon over Antarctica. When a high-energy neutrino interacts in ice, it can produce a particle shower that emits a coherent radio pulse. The observed timing pattern across the detector contains information about the arrival direction of that signal.
 
-Traditional direction reconstruction relied on signal timing, detector geometry, and correlation-based methods. A machine-learning model can learn the mapping from simulated detector responses instead of manually reconstructing direction from timing correlations.
+Traditional direction reconstruction relies on signal timing, detector geometry, and correlation-based methods. A machine-learning model can learn the mapping from simulated detector responses instead of manually reconstructing direction from timing correlations.
 
 This workflow uses supervised learning (simulated events contain both detector-level inputs and true direction labels).
 
@@ -40,7 +40,7 @@ This workflow uses supervised learning (simulated events contain both detector-l
 
 Each event is represented by timing-map and SNR information.
 
-The timing map is stored with shape `(2, 48, 150)`. The two channels represent detector vertically and horizontally polarized signal timing-maps, while the remaining dimensions represent the map structure used by the CNN.
+The timing map is stored with shape `(2, 48, 150)`. The two channels represent vertically and horizontally polarized detector timing maps, while the remaining dimensions represent the map structure used by the CNN.
 
 Each event also includes two scalar SNR features: `snr_vpol` and `snr_hpol`.
 
@@ -198,8 +198,8 @@ Current evaluation outputs are not included.
 - `README.md`: project overview and workflow summary
 - `.gitignore`: excludes data, models, outputs, logs, and cache files
 - `sbatch_train_cnn.sh`: OSC/SLURM GPU training script
-- `Figures/clean timing map.png`: clean timing-map example
-- `Figures/noise timing map.png`: noisy timing-map example
+- `Figures/clean_timing_map.png`: clean timing-map example
+- `Figures/noise_timing_map.png`: noisy timing-map example
 - `Figures/angle_distribution.png`: representative direction-distribution figure
 - `src/preprocess_data.py`: preprocessing for Random Forest and CNN workflows
 - `src/train_random_forest.py`: Random Forest training
@@ -249,7 +249,7 @@ It saves the CNN error data to `outputs/cnn_errors.npz` and the angular-error hi
 
 SLURM batch script for training the CNN on an HPC GPU node.
 
-The OSC account name and Python environment path are intentionally replaced with placeholders.
+The OSC account name and Python environment path have been replaced with placeholders.
 
 ---
 
@@ -294,9 +294,9 @@ This repository intentionally excludes:
 - Current performance results
 - Private HPC paths and account information
 
-These exclusions are due to the ongoing nature of the research project and the fact that I no longer have access to the active project assets.
+These exclusions are due to the ongoing nature of the research project.
 
-This repository should therefore be read as a cleaned code sample and workflow summary, not as a complete reproducible release of the ongoing research project.
+This repository should therefore be read as a cleaned code sample and workflow summary, not as a complete reproducible release of the research project.
 
 ---
 
