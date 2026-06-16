@@ -30,19 +30,19 @@ The figures below are representative visualizations from an earlier notebook pro
 
 ### Clean Timing Map Example
 
-![Clean timing map example](<Figures/Clean timing map example.png>)
+![Clean timing map example](<Figures/clean timing map.png>)
 
 This example shows a cleaner timing-map pattern where signal structure is visible across the detector channels.
 
 ### Noise Timing Map Example
 
-![Noise timing map example](<Figures/Noise timing map example.png>)
+![Noise timing map example](<Figures/noise timing map.png>)
 
 This example shows a noisier timing map where the signal is less visually distinct.
 
 ### Representative Direction Distribution
 
-![Representative theta and phi distribution](<Figures/Figure 1 of the notebook.png>)
+![Representative theta and phi distribution](<Figures/angle_distribution.png>)
 
 The representative sample shows that `theta` is concentrated near the horizon, especially between roughly `0` and `-10` degrees, then trails off at lower elevations. In this geometry, exactly `0` degrees corresponds to no ice path, while events just below the horizon are more relevant for neutrino detection. The `phi` distribution is more evenly spread across azimuth.
 
