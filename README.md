@@ -12,7 +12,7 @@ This work was developed and trained using GPU resources on the Ohio Supercompute
 
 The goal of this workflow is to reconstruct the incoming direction of simulated neutrino events from detector-derived timing maps.
 
-High-energy neutrinos are difficult to detect because they interact very rarely with matter. Experiments such as ANITA search for radio signals produced when high-energy neutrinos interact in Antarctic ice. If a candidate event is detected, reconstructing its incoming direction is important because it is the first step to connecting it back to possible astrophysical sources.
+High-energy neutrinos are difficult to detect because they rarely interact with matter. Experiments such as ANITA search for radio signals produced when high-energy neutrinos interact in Antarctic ice. If a candidate event is detected, reconstructing its incoming direction is important because it is the first step to connecting it back to possible astrophysical sources.
 
 Each simulated event includes:
 
